@@ -1,0 +1,22 @@
+{
+  "name": "pet-api-server",
+  "version": "1.0.0",
+  "description": "The API server for interacting with the Petfinder API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-Contemporary/Boofer.git"
+  },
+  "author": "Ryan Supple",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Code-Contemporary/Boofer/issues"
+  },
+  "homepage": "https://github.com/Code-Contemporary/Boofer#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
