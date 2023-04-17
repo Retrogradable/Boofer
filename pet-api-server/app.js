@@ -4,7 +4,9 @@ const cron = require('node-cron')
 require('dotenv').config()
 
 const app = express()
-const petFinderFetch = require('./getDogData')
+const getDogData = require('./getDogData')
+const formatDogData = require('./formatDogData')
+const sendDogData = require('./sendDogData')
 
 app.use(express.json())
 
@@ -16,8 +18,10 @@ app.use(express.json())
 // })
 
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        getDogData()
+    .then(async () => {
+        const data = await getDogData()
+        const cleanData = formatDogData(data)
+        
         // Listen for requests for dog data after connecting to DB.
         app.listen(process.env.PORT, () => {
             console.log('Listening on port', process.env.PORT)

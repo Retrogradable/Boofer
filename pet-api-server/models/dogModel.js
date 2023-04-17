@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const dogSchema = new Schema({
+    id: {
+        type: Number,
+        required: true
+    },
     breed: {
         type: String,
         required: true
@@ -11,7 +15,7 @@ const dogSchema = new Schema({
         required: true
     },
     age: {
-        type: Number,
+        type: String,
         required: true
     },
     gender: {
@@ -22,48 +26,26 @@ const dogSchema = new Schema({
         type: String,
         required: true
     },
-    color: {
+    colors: {
         type: String,
     },
-    coatLength: {
-        type: String,
-    },
-    gender: {
-        type: String,
-        required: true
-    },
-    houseTrained: {
-        type: String,
-    },
-    health: {
-        type: String,
-        required: true
-    },
-    goodInHomeWith: {
+    attributes: {
         type: String,
     },
     description: {
         type: String,
         required: true
     },
-    gender: {
-        type: String,
-        required: true
-    },
-    location: {
-        type: String,
-        required: true
-    },
     contact: {
         email: { type: String },
         phone: { type: String},
+        address: { type: String},
         required: true
     },
-    image: {
+    photos: {
         data: Buffer,
         contentType: String
-    },
-
+    }
 }, {timeStamps: true})
 
 module.exports = mongoose.model('Dog', dogSchema)

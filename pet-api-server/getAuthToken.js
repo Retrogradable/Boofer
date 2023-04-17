@@ -1,18 +1,18 @@
 require('dotenv').config()
 
-const apiKey = process.env.API_KEY
-const apiSecret = process.env.API_SECRET
-const tokenURL = 'https://api.petfinder.com/v2/oauth2/token'
+const API_KEY = process.env.API_KEY
+const API_SECRET = process.env.API_SECRET
+const TOKEN_URL = 'https://api.petfinder.com/v2/oauth2/token'
 
 // Get the auth token from Petfinder with Fetch API because who needs Axios anymore xD
 const getAuthToken = async () => {
   try {
-    const res = await fetch(tokenURL, {
+    const res = await fetch(TOKEN_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${apiSecret}`
+      body: `grant_type=client_credentials&client_id=${API_KEY}&client_secret=${API_SECRET}`
     })
 
     const data = await res.json()
