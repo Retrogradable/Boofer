@@ -7,7 +7,7 @@ const formatDogData = (data) => {
     // Create new objects with destructuring.
     for(obj in data.animals) {
         let {
-            id,
+            id: petId,
             breeds,
             name,
             age,
@@ -21,7 +21,7 @@ const formatDogData = (data) => {
             photos} = data.animals[obj]
         
         cleanData.push({
-            id,
+            petId,
             breeds,
             name,
             age,

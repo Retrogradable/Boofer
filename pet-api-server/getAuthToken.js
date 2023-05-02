@@ -18,6 +18,7 @@ const getAuthToken = async () => {
     const data = await res.json()
     const accessToken = data.access_token
 
+    // Check for errors.
     if(res.status != 200) {
       console.log(`Bad token request: ${res.status},  ${res.statusText}.`)
       return null
@@ -30,5 +31,6 @@ const getAuthToken = async () => {
 }
 
 module.exports = getAuthToken
+
 // Test
 // getAuthToken().then(accessToken => console.log(accessToken))
