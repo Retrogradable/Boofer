@@ -16,7 +16,7 @@ app.use(express.json())
 // Store the results in MongoDB for backend to access.
 // Cron runs and will check every day at 11am to update the data in the database if adoption status changes.
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, { dbName: 'test'})
     .then(() => {
         cron.schedule('0 11 * * *', async () => {
 

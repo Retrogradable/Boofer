@@ -16,4 +16,5 @@ const dogSchema = new Schema({
     photos: { type: [] }
 }, {timeStamps: true})
 
-module.exports = mongoose.model('Dog', dogSchema)
+const dogDb = mongoose.connection.useDb('Dogs')
+module.exports = dogDb.model('Dog', userSchema)
